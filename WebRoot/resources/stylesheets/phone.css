@@ -1,0 +1,78 @@
+@media screen and (max-width: 768px) {
+  /* line 2, ../sass/phone.scss */
+  .article-title {
+    width: 343px;
+  }
+
+  /* line 5, ../sass/phone.scss */
+  .article-body {
+    width: 336px;
+  }
+
+  /* line 9, ../sass/phone.scss */
+  nav {
+    margin-bottom: 0px !important;
+  }
+
+  /* line 12, ../sass/phone.scss */
+  .navbar-nav li {
+    border-bottom: 1px solid #eee;
+  }
+  /* line 14, ../sass/phone.scss */
+  .navbar-nav li a {
+    text-align: center;
+  }
+  /* line 17, ../sass/phone.scss */
+  .navbar-nav li ul {
+    display: none;
+    padding-left: 0;
+    background-color: #eee;
+  }
+  /* line 21, ../sass/phone.scss */
+  .navbar-nav li ul li {
+    line-height: 30px;
+    list-style: none;
+  }
+  /* line 24, ../sass/phone.scss */
+  .navbar-nav li ul li a {
+    text-align: center;
+    display: block;
+    color: #707070;
+  }
+  /* line 31, ../sass/phone.scss */
+  .navbar-nav li:last-child {
+    border-bottom: none;
+  }
+
+  /* line 35, ../sass/phone.scss */
+  .category .category-article-list {
+    background-image: none;
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+  }
+  /* line 39, ../sass/phone.scss */
+  .category .category-article-list ul {
+    padding: 12px;
+  }
+
+  /* line 43, ../sass/phone.scss */
+  .carousel img {
+    height: 240px !important;
+  }
+
+  /* line 46, ../sass/phone.scss */
+  .page {
+    padding-top: 10px;
+  }
+  /* line 48, ../sass/phone.scss */
+  .page h3.page-title {
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  /* line 53, ../sass/phone.scss */
+  .page .page-subtitle {
+    margin-top: 0;
+    padding: 8px 20px;
+  }
+}

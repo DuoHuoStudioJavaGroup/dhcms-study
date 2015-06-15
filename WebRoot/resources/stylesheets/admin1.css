@@ -1,0 +1,235 @@
+/*
+ * Title: Pure CSS3 Backend Panel
+ * Author: Clear
+ * Version: 1.0.0
+ * Create: 2015-06-05
+ * Update: 2015-06-05
+ */
+/* CSS Reset */
+/* line 10, ../sass/admin1.scss */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: normal;
+}
+
+/* line 19, ../sass/admin1.scss */
+body {
+  font-family: "Segoe UI","Microsoft YaHei";
+}
+
+/* line 23, ../sass/admin1.scss */
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 28, ../sass/admin1.scss */
+.fl {
+  float: left;
+}
+
+/* line 32, ../sass/admin1.scss */
+.fr {
+  float: right;
+}
+
+/* line 36, ../sass/admin1.scss */
+.ease {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+/* line 43, ../sass/admin1.scss */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Backend Panel Start */
+/* line 51, ../sass/admin1.scss */
+.clear-backend {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 58, ../sass/admin1.scss */
+.avatar {
+  background: #f0f0f0;
+  width: 200px;
+  height: 200px;
+}
+
+/* line 64, ../sass/admin1.scss */
+.avatar div {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  top: 25px;
+  left: 25px;
+}
+
+/* line 74, ../sass/admin1.scss */
+.avatar div img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 79, ../sass/admin1.scss */
+.clear-backend > input {
+  position: absolute;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* line 85, ../sass/admin1.scss */
+.clear-backend > input:hover {
+  cursor: pointer;
+}
+
+/* line 89, ../sass/admin1.scss */
+.clear-backend > input:hover + span,
+.clear-backend > input:checked + span {
+  background: #fff;
+  color: #1ABC9C;
+}
+
+/* line 94, ../sass/admin1.scss */
+.clear-backend > input:checked + span + i {
+  color: #1ABC9C;
+}
+
+/* line 98, ../sass/admin1.scss */
+.clear-backend > i {
+  position: absolute;
+  margin-top: -40px;
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+/* line 105, ../sass/admin1.scss */
+.clear-backend > span,
+.clear-backend > i {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+/* line 113, ../sass/admin1.scss */
+.clear-backend > input,
+.clear-backend > span {
+  background: #f0f0f0;
+  display: block;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  z-index: 9;
+}
+
+/* line 124, ../sass/admin1.scss */
+.top-bar {
+  background: #f0f0f0;
+  color: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 200px);
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  z-index: 9;
+}
+
+/* line 137, ../sass/admin1.scss */
+.top-bar li {
+  float: right;
+}
+
+/* line 141, ../sass/admin1.scss */
+.top-bar a {
+  display: block;
+  padding: 0 20px;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+/* line 150, ../sass/admin1.scss */
+.top-bar a:hover {
+  color: #1ABC9C;
+}
+
+/* line 154, ../sass/admin1.scss */
+.top-bar li:hover {
+  background: #fff;
+}
+
+/* line 158, ../sass/admin1.scss */
+.tab-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 200px);
+  height: 100%;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+/* line 168, ../sass/admin1.scss */
+.tab-content section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: none;
+}
+
+/* line 176, ../sass/admin1.scss */
+.clear-backend > input.tab ~ .tab-content .tab-item-1 {
+  display: block;
+}
+
+/* Responsive */
+@media only screen and (max-width: 641px) {
+  /* line 197, ../sass/admin1.scss */
+  .avatar,
+  .clear-backend > input,
+  .clear-backend > span {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* line 203, ../sass/admin1.scss */
+  .clear-backend > span {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+
+  /* line 207, ../sass/admin1.scss */
+  .avatar div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+  }
+
+  /* line 214, ../sass/admin1.scss */
+  .top-bar,
+  .tab-content {
+    width: calc(100% - 60px);
+  }
+}
