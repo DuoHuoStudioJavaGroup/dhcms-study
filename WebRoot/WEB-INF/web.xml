@@ -50,6 +50,11 @@
 		<servlet-name>ArticleServlet</servlet-name>
 		<servlet-class>com.dh.youth.servlet.ArticleServlet</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>ColumnServlet</servlet-name>
+    <servlet-class>com.dh.youth.servlet.ColumnServlet</servlet-class>
+  </servlet>
+
 
 	<servlet-mapping>
 		<servlet-name>LonginServlet</servlet-name>
@@ -59,5 +64,9 @@
 		<servlet-name>ArticleServlet</servlet-name>
 		<url-pattern>/article</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ColumnServlet</servlet-name>
+    <url-pattern>/column</url-pattern>
+  </servlet-mapping>
 
 </web-app>
