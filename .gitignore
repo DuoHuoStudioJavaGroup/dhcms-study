@@ -1,0 +1,4 @@
+*.class
+WebRoot/resources/javascripts/ckeditor/*
+WebRoot/WEB-INF/lib/*
+WebRoot/WEB-INF/classes/*
