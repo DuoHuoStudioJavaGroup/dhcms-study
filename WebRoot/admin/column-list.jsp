@@ -30,8 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<section>
             		<p class="marginbot-10">
                         <span class="h3">栏目</span>
-                        <a href="column-page.html" class="btn btn-link">新建单页</a>
-                        <a href="#column-category" class="btn btn-link" data-toggle="modal">新建列表页</a>
+                        <a href="/subyouth/column?method=tocolumn" class="btn btn-link">添加栏目</a>
                     </p>
                     <div class="modal fade" id="column-category">
                         <div class="modal-dialog">

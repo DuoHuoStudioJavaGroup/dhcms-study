@@ -37,7 +37,7 @@ public class ColumnDaoImpl implements ColumnDao {
 				column = new Column();
 				column.setId(rs.getInt(1));
 				column.setColumnName(rs.getString(2));
-				column.setColumnIndex(3);
+				column.setColumnIndex(rs.getInt(3));
 				
 				columnList.add(column);
 			}
