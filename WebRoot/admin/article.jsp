@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -45,6 +46,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="am-u-sm-2">文章标题:</div>
 					<div class="am-u-sm-6 am-u-end">
 						<input type="text" name="title" placeholder="请输入标题" required>
+					</div>
+				</div>
+				
+				<div class="am-g dh-news-am-g">
+					<div class="am-u-sm-2">文章所属栏目:</div>
+					<div class="am-u-sm-6 am-u-end">
+						<select name="columnid">
+							<a:forEach items="${columnList }" var="cl">
+								<option value ="${cl.id}" >${cl.columnName }</option>
+							</a:forEach>
+						</select>
 					</div>
 				</div>
 				

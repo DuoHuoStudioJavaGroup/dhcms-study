@@ -10,4 +10,5 @@ public interface ArticleDao {
 	Article getArticleById(int id);
 	int updateArticle(Article article);
 	int deleteArticle(int id);
+	ArrayList<Article> getArticleListForDisplayByColumnId(int columnid);
 }

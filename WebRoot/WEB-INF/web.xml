@@ -54,6 +54,11 @@
     <servlet-name>ColumnServlet</servlet-name>
     <servlet-class>com.dh.youth.servlet.ColumnServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>InitIndexPage</servlet-name>
+    <servlet-class>com.dh.youth.servlet.InitIndexPage</servlet-class>
+  </servlet>
+
 
 
 	<servlet-mapping>
@@ -67,6 +72,10 @@
   <servlet-mapping>
     <servlet-name>ColumnServlet</servlet-name>
     <url-pattern>/column</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InitIndexPage</servlet-name>
+    <url-pattern>/initIndexPage</url-pattern>
   </servlet-mapping>
 
 </web-app>

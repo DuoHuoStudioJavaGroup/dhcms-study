@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -35,41 +36,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container">
 			<div class="row">
 				<ul>
-					<li><a href="#">首页</a></li>
-					<li><a href="#">团委简介</a></li>
-					<li><a href="#">工作流程</a>
-						<ul>
-							<li><a href="#">社会实践</a></li>
-							<li><a href="#">志愿服务</a></li>
-							<li><a href="#">学术科技</a></li>
-							<li><a href="#">组织建设</a></li>
-							<li><a href="#">思想教育</a></li>
-							<li><a href="#">问题活动</a></li>
-						</ul>
-					</li>
-					<li><a href="#">规章制度</a></li>
-					<li><a href="#">工作专题</a></li>
-					<li><a href="#">青英人才</a></li>
-					<li><a href="#">网上团校</a></li>
-					<li><a href="#">学生组织</a>
-						<ul>
-							<li><a href="#">社会实践</a></li>
-							<li><a href="#">志愿服务</a></li>
-							<li><a href="#">学术科技</a></li>
-							<li><a href="#">组织建设</a></li>
-							<li><a href="#">思想教育</a></li>
-							<li><a href="#">问题活动</a></li>
-						</ul>
-					</li>
-					<li><a href="#">团属刊物</a></li>
-					<li><a href="#">资料下载</a></li>
+					<li><a href="/subyouth/initIndexPage?method=init">首页</a></li>
+					<c:forEach items="${topcolumn }" var="tc">
+						<li><a href="/subyouth/initIndexPage?method=listColumnArticle&columnid=${tc.id }">${tc.columnName }</a></li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 	<!-- 手机版导航 -->
-
 	<nav class="navbar navbar-default visible-xs" role="navigation">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
@@ -84,34 +60,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse navbar-ex1-collapse">
 	        <ul class="nav navbar-nav">
-	            <li><a href="#">首页</a></li>
-	            <li><a href="#">团委简介</a></li>
-	            <li><a href="#" data-toggle="collapse" data-target="#collapseExample">工作流程</a>
-	                <ul id="collapseExample">
-	                    <li><a href="#">社会实践</a></li>
-	                    <li><a href="#">志愿服务</a></li>
-	                    <li><a href="#">学术科技</a></li>
-	                    <li><a href="#">组织建设</a></li>
-	                    <li><a href="#">思想教育</a></li>
-	                    <li><a href="#">问题活动</a></li>
-	                </ul>
-	            </li>
-	            <li><a href="#">规章制度</a></li>
-	            <li><a href="#">工作专题</a></li>
-	            <li><a href="#">青英人才</a></li>
-	            <li><a href="#">网上团校</a></li>
-	            <li><a href="#" data-toggle="collapse" data-target="#collapseExample1">学生组织</a>
-	                <ul id="collapseExample1">
-	                    <li><a href="#">社会实践</a></li>
-	                    <li><a href="#">志愿服务</a></li>
-	                    <li><a href="#">学术科技</a></li>
-	                    <li><a href="#">组织建设</a></li>
-	                    <li><a href="#">思想教育</a></li>
-	                    <li><a href="#">问题活动</a></li>
-	                </ul>
-	            </li>
-	            <li><a href="#">团属刊物</a></li>
-	            <li><a href="#">资料下载</a></li>
+	            <li><a href="/subyouth/initIndexPage?method=init">首页</a></li>
+	            <c:forEach items="${topcolumn }" var="tc">
+					<li><a href="/subyouth/initIndexPage?method=listColumnArticle&columnid=${tc.id }">${tc.columnName }</a></li>
+				</c:forEach>
 	        </ul>
 	    </div>
 	    <!-- /.navbar-collapse -->
@@ -143,6 +95,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>
+	
+	<!-- 二级栏目展示区 -->
 	<section class="container">
 		<div class="row">
 			<div class="col-md-6 col-xs-12 article-content">
@@ -150,237 +104,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="article-title article-notify"></div>
 					<div class="article-body">
 						<ul class="article-body-list">
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
+							<c:forEach items="${articleFirst }" var="af">
+								<li class="clearfix">
+									<span class="article-line hidden-xs"></span>
+									<a href="/subyouth/initIndexPage?method=displayarticle&id=${af.id }">${af.title }</a>
+									<span class="pull-right article-time hidden-xs">2015-3-27</span>
+								</li>
+							</c:forEach>
 						</ul>
 					</div>
 				</article>
 			</div>
+			
 			<div class="col-md-6 col-xs-12 article-content">
 				<article>
 					<div class="article-title article-news"></div>
 					<div class="article-body">
 						<ul class="article-body-list">
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
+							<c:forEach items="${articleSecond }" var="as">
+								<li class="clearfix">
+									<span class="article-line hidden-xs"></span>
+									<a href="/subyouth/initIndexPage?method=displayarticle&id=${as.id }">${as.title }</a>
+									<span class="pull-right article-time hidden-xs">2015-3-27</span>
+								</li>
+							</c:forEach>
 						</ul>
 					</div>
 				</article>
 			</div>
-			<div class="col-md-6 col-xs-12 article-content">
-				<article>
-					<div class="article-title article-college-news"></div>
-					<div class="article-body">
-						<ul class="article-body-list">
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-						</ul>
-					</div>
-				</article>
-			</div>
-			<div class="col-md-6 col-xs-12 article-content">
-				<article>
-					<div class="article-title article-student"></div>
-					<div class="article-body">
-						<ul class="article-body-list">
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-							<li class="clearfix">
-								<span class="article-line hidden-xs"></span>
-								<a href="">南京信息工程大学团委一行十六个字</a>
-								<span class="pull-right article-time hidden-xs">2015-3-27</span>
-							</li>
-						</ul>
-					</div>
-				</article>
-			</div>
+			
 		</div>
 	</section>
 
@@ -431,6 +183,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	          autoplaySpeed: 1000,
 	      });
 	    });
-	  </script>
+	 </script>
 </body>
 </html>

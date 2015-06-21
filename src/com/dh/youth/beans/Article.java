@@ -2,14 +2,22 @@ package com.dh.youth.beans;
 
 public class Article {
 	private int id;
+	private String title;
+	private String content;
+	private int columnId;
+	
+	public int getColumnId() {
+		return columnId;
+	}
+	public void setColumnId(int columnId) {
+		this.columnId = columnId;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	private String title;
-	private String content;
 	
 	public String getTitle() {
 		return title;

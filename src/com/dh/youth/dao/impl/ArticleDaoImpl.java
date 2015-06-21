@@ -16,7 +16,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	public boolean insertArticle(Article article) {
 		// TODO Auto-generated method stub
 		db = new SqlDao();
-		String sql = "insert into article (title, content) values ('"+article.getTitle()+"', '"+article.getContent()+"')";
+		String sql = "insert into article (title, content,columnid) values ('"+article.getTitle()+"', '"+article.getContent()+"','"+article.getColumnId()+"')";
 		int flag = db.executeInsert(sql);
 		db.CloseDataBase();
 		if(flag == 1){
@@ -32,7 +32,7 @@ public class ArticleDaoImpl implements ArticleDao {
 		ArrayList<Article> articleList = new ArrayList();
 		Article article = null;
 		db = new SqlDao();
-		String sql = "select id, title from article where deleteflag!=1 limit 20";
+		String sql = "select id, title,columnid from article where deleteflag!=1 limit 20";
 		rs = db.executeQuery(sql);
 		
 		try {
@@ -40,6 +40,7 @@ public class ArticleDaoImpl implements ArticleDao {
 				article = new Article();
 				article.setId(rs.getInt(1));
 				article.setTitle(rs.getString(2));
+				article.setColumnId(rs.getInt(3));
 				articleList.add(article);
 			}
 		} catch (SQLException e) {
@@ -77,7 +78,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	public int updateArticle(Article article) {
 		// TODO Auto-generated method stub
 		db = new SqlDao();
-		String sql = "update article title='"+article.getTitle()+"',content='"+article.getContent()+"' where id='"+article.getId()+"'";
+		String sql = "update article set title='"+article.getTitle()+"',content='"+article.getContent()+"',columnid='"+article.getColumnId()+"' where id='"+article.getId()+"'";
 		int flag = db.Update(sql);
 		return flag;
 	}
@@ -88,5 +89,28 @@ public class ArticleDaoImpl implements ArticleDao {
 		db = new SqlDao();
 		String sql = "update articel set deleteflag=1 where id='"+id+"'";
 		return db.Update(sql);
+	}
+
+	@Override
+	public ArrayList<Article> getArticleListForDisplayByColumnId(int columnid) {
+		// TODO Auto-generated method stub
+		Article article;
+		ArrayList<Article> articleList = new ArrayList(); 
+		db = new SqlDao();
+		String sql = "select id,title from article where columnid='"+columnid+"' limit 10";
+		rs = db.executeQuery(sql);
+		try {
+			while(rs.next()){
+				article = new Article();
+				article.setId(rs.getInt(1));
+				article.setTitle(rs.getString(2));
+				
+				articleList.add(article);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return articleList;
 	}
 }

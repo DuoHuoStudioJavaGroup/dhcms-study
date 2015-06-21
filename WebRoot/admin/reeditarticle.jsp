@@ -51,6 +51,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				
 				<div class="am-g dh-news-am-g">
+					<div class="am-u-sm-2">文章所属栏目:</div>
+					<div class="am-u-sm-6 am-u-end">
+						<select name="columnid">
+							<a:forEach items="${columnList }" var="cl">
+								<option value ="${cl.id}" >${cl.columnName }</option>
+							</a:forEach>
+						</select>
+					</div>
+				</div>
+				
+				<div class="am-g dh-news-am-g">
 					<div class="am-u-sm-2">正文:</div>
 					<div class="am-u-sm-10">
 						<textarea class="ckeditor" id="newseditor1" name="content" rows="8" cols="30"><a:out value="${article.content}" escapeXml="false"></a:out></textarea>

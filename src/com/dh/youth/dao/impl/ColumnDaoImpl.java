@@ -93,4 +93,51 @@ public class ColumnDaoImpl implements ColumnDao {
 		db.CloseDataBase();
 		return flag;
 	}
+
+	@Override
+	public ArrayList<Column> getColumnForArticle() {
+		// TODO Auto-generated method stub
+		Column column;
+		ArrayList<Column> columnList = new ArrayList();
+		db = new SqlDao();
+		String sql = "select id,column_name from dhcolumn where column_isuse=0";
+		rs = db.executeQuery(sql);
+		try {
+			while(rs.next()){
+				column = new Column();
+				column.setId(rs.getInt(1));
+				column.setColumnName(rs.getString(2));
+				
+				columnList.add(column);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		db.CloseDataBase();
+		return columnList;
+	}
+
+	@Override
+	public ArrayList<Column> getColumnListByColimnIndexId(int id) {
+		// TODO Auto-generated method stub
+		Column column;
+		ArrayList<Column> columnList = new ArrayList();
+		db = new SqlDao();
+		String sql = "select id,column_name from dhcolumn where column_index = '"+id+"' and column_isuse=0";
+		rs = db.executeQuery(sql);
+		try {
+			while(rs.next()){
+				column = new Column();
+				column.setId(rs.getInt(1));
+				column.setColumnName(rs.getString(2));
+				columnList.add(column);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return columnList;
+	}
+
 }

@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <ul class="nav">
                     <li class="selected">
-                        <a href="index.html">
+                        <a href="<%=basePath%>index.jsp">
                             <span class="fa fa-home"></span>
                             <span class="title">首页</span>
                         </a>

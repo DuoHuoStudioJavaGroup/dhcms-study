@@ -53,8 +53,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <tr>
                                 <th>文章标题</th>
                                 <th>作者</th>
-                                <th>分类目录</th>
-                                <th>标签</th>
                                 <th>日期</th>
                                 <th>编辑</th>
                             </tr>
@@ -64,8 +62,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                            <tr>
 	                                <td>${articleList.title}</td>
 	                                <td>admin</td>
-	                                <td>规章制度</td>
-	                                <td>规章制度</td>
 	                                <td>2015-03-08</td>
 	                                <td>
 	                                    <a href="/subyouth/article?method=reedit&id=${articleList.id}" class="btn btn-primary">编辑</a>
