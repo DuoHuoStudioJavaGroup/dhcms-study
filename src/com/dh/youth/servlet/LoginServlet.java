@@ -13,7 +13,7 @@ import com.dh.youth.beans.User;
 import com.dh.youth.dao.UserDao;
 import com.dh.youth.dao.impl.UserDaoImpl;
 
-public class LonginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
